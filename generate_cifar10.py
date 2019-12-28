@@ -97,7 +97,7 @@ if __name__ == '__main__':
     trainX = None
     trainy = None
     for i in range(1, 6):
-        filename = './data/cifar-10-batches-py/data_batch_%d'%(i)
+        filename = './cifar-10-batches-py/data_batch_%d'%(i)
         batch_data = unpickle(filename)
         if trainX is None:
             trainX = batch_data[b'data'].reshape((-1, 32*32, 3), order='F')
@@ -113,7 +113,7 @@ if __name__ == '__main__':
 
 
     # process and save the test data
-    filename = './data/cifar-10-batches-py/test_batch'
+    filename = './cifar-10-batches-py/test_batch'
     batch_data = unpickle(filename)
     testX = batch_data[b'data'].reshape((-1, 32*32, 3), order='F')
     testX = testX.reshape((-1, 32, 32, 3))
